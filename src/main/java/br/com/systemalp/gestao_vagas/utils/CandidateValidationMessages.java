@@ -1,6 +1,8 @@
 package br.com.systemalp.gestao_vagas.utils;
 
 public class CandidateValidationMessages {
+    public static final String USER_EXISTS = "Este usuário ja existe";
+
     public static final String NOT_EMPTY_NAME = "Campo [nome] é obrigatório";
 
     public static final String NOT_EMPTY_USERNAME = "Campo [usuário] é obrigatório";

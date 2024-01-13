@@ -1,13 +1,13 @@
 package br.com.systemalp.gestao_vagas.modules.candidate.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.systemalp.gestao_vagas.modules.candidate.entityes.CandidateEntity;
-import br.com.systemalp.gestao_vagas.modules.candidate.repositoryes.CandidateRepository;
+import br.com.systemalp.gestao_vagas.modules.candidate.entities.CandidateEntity;
+import br.com.systemalp.gestao_vagas.modules.candidate.services.CreateCandidateService;
 import jakarta.validation.Valid;
 
 @RestController
@@ -15,15 +15,15 @@ import jakarta.validation.Valid;
 public class CandidateController {
 
    @Autowired
-   private CandidateRepository candidateRepository;
+   private CreateCandidateService createCandidateService;
 
    @PostMapping("/")
-   public CandidateEntity create(@Valid @RequestBody CandidateEntity candidateEntity) {
-      if (candidateEntity != null) {
-         return this.candidateRepository.save(candidateEntity);
-      } else {
-         return null;
+   public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
+      try {
+         var result = this.createCandidateService.execute(candidateEntity);
+         return ResponseEntity.ok().body(result);
+      } catch (Exception e) {
+         return ResponseEntity.badRequest().body(e.getMessage());
       }
    }
-
 }

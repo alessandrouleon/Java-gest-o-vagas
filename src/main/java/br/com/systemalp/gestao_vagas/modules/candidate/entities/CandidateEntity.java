@@ -1,4 +1,4 @@
-package br.com.systemalp.gestao_vagas.modules.candidate.entityes;
+package br.com.systemalp.gestao_vagas.modules.candidate.entities;
 
 import java.time.LocalDate;
 import java.util.UUID;
