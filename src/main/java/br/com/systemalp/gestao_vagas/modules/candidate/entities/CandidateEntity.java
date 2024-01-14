@@ -7,7 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Length;
 
-import br.com.systemalp.gestao_vagas.utils.CandidateValidationMessages;
+import br.com.systemalp.gestao_vagas.utils.helper.CandidateValidationMessages;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

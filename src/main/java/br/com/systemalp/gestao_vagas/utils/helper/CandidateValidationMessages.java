@@ -1,4 +1,4 @@
-package br.com.systemalp.gestao_vagas.utils;
+package br.com.systemalp.gestao_vagas.utils.helper;
 
 public class CandidateValidationMessages {
     public static final String USER_EXISTS = "Este usuário ja existe";
