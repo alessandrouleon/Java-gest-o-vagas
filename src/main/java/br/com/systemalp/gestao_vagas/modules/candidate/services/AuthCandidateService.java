@@ -49,7 +49,7 @@ public class AuthCandidateService {
         var token = JWT.create()
                 .withIssuer("javagas")
                 .withSubject(candidate.getId().toString())
-                .withClaim("rules", Arrays.asList("candidate"))
+                .withClaim("roles", Arrays.asList("candidate"))
                 .withExpiresAt(expriresIn)
                 .sign(algorithm);
 

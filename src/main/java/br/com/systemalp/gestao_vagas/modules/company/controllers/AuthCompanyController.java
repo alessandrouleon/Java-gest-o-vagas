@@ -15,13 +15,13 @@ import br.com.systemalp.gestao_vagas.modules.company.dto.AuthCompanyDTO;
 import br.com.systemalp.gestao_vagas.modules.company.services.AuthCompanyService;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/company")
 public class AuthCompanyController {
 
     @Autowired
     private AuthCompanyService authCompanyService;
 
-    @PostMapping("/company")
+    @PostMapping("/auth")
     public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO) {
         try {
             var result = this.authCompanyService.execute(authCompanyDTO);
